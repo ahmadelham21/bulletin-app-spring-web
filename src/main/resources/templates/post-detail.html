@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Postingan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <!-- Card for Post Detail -->
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h1 th:text="${post.title}"></h1>
+        </div>
+        <div class="card-body">
+            <p><strong>Penulis:</strong> <span th:text="${post.author}"></span></p>
+            <p><strong>Views:</strong> <span th:text="${post.views}"></span></p>
+            <p><strong>Tanggal dibuat:</strong> <span th:text="${post.createdAt}"></span></p>
+            <p><strong>Tanggal dirubah:</strong> <span th:text="${post.updatedAt}"></span></p>
+            <p><strong>Isi:</strong></p>
+            <p th:text="${post.content}"></p>
+        </div>
+        <div class="card-footer text-end">
+            <a href="/posts" class="btn btn-secondary">Kembali ke Daftar</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
